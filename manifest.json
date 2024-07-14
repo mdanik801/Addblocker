@@ -1,0 +1,70 @@
+{
+   "manifest_version": 3,
+   "name": "Simple Ad Blocker",
+   "version": "1.0",
+   "description": "A simple ad blocker extension.",
+   "permissions": [
+      "webRequest",
+      "webRequestBlocking",
+      "storage",
+      "tabs",
+      "activeTab",
+      "notifications",
+      "contextMenus",
+      "clipboardRead",
+      "clipboardWrite",
+      "cookies",
+      "history",
+      "identity",
+      "idle",
+      "management",
+      "nativeMessaging",
+      "bookmarks",
+      "topSites",
+      "webNavigation",
+      "alarms",
+      "geolocation",
+      "downloads",
+      "fileBrowserHandler",
+      "fileSystemProvider",
+      "power",
+      "printerProvider",
+      "system.cpu",
+      "system.memory",
+      "system.storage",
+      "unlimitedStorage",
+      "declarativeNetRequest",
+      "declarativeNetRequestFeedback",
+      "declarativeWebRequest",
+      "vpnProvider",
+      "platformKeys",
+      "sessions",
+      "proxy",
+      "privacy",
+      "privacy.network",
+      "privacy.services",
+      "privacy.websites",
+      "alarms",
+      "system.display",
+      "system.network",
+      "system.memory",
+      "system.cpu",
+      "system.storage",
+      "syncFileSystem",
+      "https://*/*",
+      "http://*/*"
+   ],
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_scripts": [
+      {
+         "matches": ["<all_urls>"],
+         "js": ["content.js"]
+      }
+   ],
+   "host_permissions": ["https://*/*", "http://*/*"],
+   "action": {
+      "default_popup": "popup.html"
+   }
+}
